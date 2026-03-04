@@ -4,34 +4,12 @@ interface ErrorMessageProps {
 
 export default function ErrorMessage({ message }: ErrorMessageProps) {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "1rem",
-        padding: "3rem",
-        textAlign: "center",
-      }}
-    >
-      <img src="/mimikyu-face.png" alt="Mimikyu" style={{ width: "80px", height: "80px", objectFit: "contain" }} />
-      <p
-        style={{
-          fontFamily: "'Montserrat', sans-serif",
-          fontSize: "1.2rem",
-          color: "#5e4c3e",
-          maxWidth: "400px",
-        }}
-      >
+    <div className="flex flex-col items-center gap-4 p-12 text-center">
+      <img src="/mimikyu-face.png" alt="Mimikyu" className="w-[80px] h-[80px] object-contain" />
+      <p className="font-sans text-xl text-rawg-brown max-w-[400px]">
         {message}
       </p>
-      <p
-        style={{
-          fontFamily: "'Montserrat', sans-serif",
-          fontSize: "0.9rem",
-          color: "#a39475",
-        }}
-      >
+      <p className="font-sans text-sm text-rawg-khaki">
         Mimikyu tampoco encontró nada por aquí...
       </p>
     </div>

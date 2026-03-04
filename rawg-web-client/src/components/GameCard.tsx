@@ -7,79 +7,29 @@ interface GameCardProps {
 
 export default function GameCard({ game }: GameCardProps) {
   return (
-    <Link href={`/games/${game.slug}`} style={{ textDecoration: "none" }}>
-      <div
-        style={{
-          backgroundColor: "#d7cfac",
-          borderRadius: "12px",
-          overflow: "hidden",
-          border: "2px solid #5e4c3e",
-          cursor: "pointer",
-          transition: "transform 0.2s ease, box-shadow 0.2s ease",
-        }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)";
-          (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 24px rgba(44,44,42,0.3)";
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
-          (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-        }}
-      >
+    <Link href={`/games/${game.slug}`} className="no-underline block">
+      <div className="bg-rawg-beige rounded-xl overflow-hidden border-2 border-rawg-brown cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(44,44,42,0.3)]">
         {game.background_image ? (
           <img
             src={game.background_image}
             alt={game.name}
-            style={{ width: "100%", height: "180px", objectFit: "cover" }}
+            className="w-full h-[180px] object-cover"
           />
         ) : (
-          <div
-            style={{
-              width: "100%",
-              height: "180px",
-              backgroundColor: "#a39475",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <img src="/mimikyu-face.png" alt="Mimikyu" style={{ width: "80px", height: "80px", objectFit: "contain" }} />
+          <div className="w-full h-[180px] bg-rawg-khaki flex items-center justify-center">
+            <img src="/mimikyu-face.png" alt="Mimikyu" className="w-[80px] h-[80px] object-contain" />
           </div>
         )}
-        <div style={{ padding: "1rem" }}>
-          <h3
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontSize: "1rem",
-              color: "#2c2c2a",
-              margin: "0 0 0.5rem 0",
-              fontWeight: "bold",
-            }}
-          >
+        <div className="p-4">
+          <h3 className="font-sans text-base text-rawg-dark mb-2 font-bold">
             {game.name}
           </h3>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span
-              style={{
-                fontFamily: "'Montserrat', sans-serif",
-                fontSize: "0.85rem",
-                color: "#5e4c3e",
-              }}
-            >
+          <div className="flex justify-between items-center">
+            <span className="font-sans text-[0.85rem] text-rawg-brown">
               ⭐ {game.rating}
             </span>
             {game.metacritic && (
-              <span
-                style={{
-                  backgroundColor: "#c98350",
-                  color: "#d7cfac",
-                  borderRadius: "4px",
-                  padding: "0.1rem 0.4rem",
-                  fontSize: "0.75rem",
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontWeight: "bold",
-                }}
-              >
+              <span className="bg-rawg-orange text-rawg-beige rounded px-[0.4rem] py-[0.1rem] text-xs font-sans font-bold">
                 {game.metacritic}
               </span>
             )}

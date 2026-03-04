@@ -17,44 +17,19 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "0.5rem",
-        backgroundColor: "#a39475",
-        borderRadius: "999px",
-        padding: "0.5rem 1rem",
-        border: "2px solid #5e4c3e",
-        width: "100%",
-        maxWidth: "500px",
-      }}
+      className="flex items-center gap-2 bg-rawg-khaki rounded-full px-4 py-2 border-2 border-rawg-brown w-full max-w-[500px]"
     >
       <input
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Buscar juegos..."
-        style={{
-          flex: 1,
-          background: "transparent",
-          border: "none",
-          outline: "none",
-          fontFamily: "'Montserrat', sans-serif",
-          fontSize: "1rem",
-          color: "#2c2c2a",
-        }}
+        className="flex-1 bg-transparent border-none outline-none font-sans text-base text-rawg-dark"
       />
       <button
         type="submit"
         aria-label="Buscar"
-        style={{
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-          color: "#2c2c2a",
-          fontSize: "1.2rem",
-          padding: 0,
-        }}
+        className="bg-transparent border-none cursor-pointer text-rawg-dark text-xl p-0"
       >
         <i className="fa-solid fa-magnifying-glass"></i>
       </button>

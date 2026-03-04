@@ -12,14 +12,7 @@ interface GameGridProps {
 export default function GameGrid({ games, loading, error }: GameGridProps) {
   if (loading) {
     return (
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-          gap: "1.5rem",
-          padding: "2rem",
-        }}
-      >
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-6 p-8">
         {Array.from({ length: 12 }).map((_, i) => (
           <SkeletonCard key={i} />
         ))}

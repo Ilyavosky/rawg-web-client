@@ -8,8 +8,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-montserrat);
   --font-mono: var(--font-geist-mono);
+  --color-rawg-dark: #2c2c2a;
+  --color-rawg-brown: #5e4c3e;
+  --color-rawg-beige: #d7cfac;
+  --color-rawg-khaki: #a39475;
+  --color-rawg-orange: #c98350;
 }
 
 @media (prefers-color-scheme: dark) {

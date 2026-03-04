@@ -1,25 +1,8 @@
 export default function Navbar() {
   return (
-    <nav
-      style={{
-        backgroundColor: "#2c2c2a",
-        borderBottom: "3px solid #5e4c3e",
-        padding: "1rem 2rem",
-        display: "flex",
-        alignItems: "center",
-        gap: "1rem",
-      }}
-    >
-      <div style={{ fontSize: "2rem" }}></div>
-      <span
-        style={{
-          fontFamily: "'Montserrat', sans-serif",
-          fontSize: "1.5rem",
-          fontWeight: "bold",
-          color: "#d7cfac",
-          letterSpacing: "0.05em",
-        }}
-      >
+    <nav className="bg-rawg-dark border-b-[3px] border-b-rawg-brown px-8 py-4 flex items-center gap-4">
+      <div className="text-3xl"></div>
+      <span className="text-2xl text-rawg-beige tracking-[0.05em]">
         Buscador de juegos de Mimikyu powered by RAWG
       </span>
     </nav>

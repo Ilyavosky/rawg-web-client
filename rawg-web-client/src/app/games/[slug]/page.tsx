@@ -30,23 +30,13 @@ export default function GamePage() {
 
   if (loading) {
     return (
-      <main style={{ minHeight: "100vh", backgroundColor: "#d7cfac" }}>
+      <main className="min-h-screen bg-rawg-beige">
         <Navbar />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "60vh",
-            gap: "1rem",
-          }}
-        >
-          <img src="/pokeball-spin.png" alt="Cargando" style={{ width: "60px", height: "60px", animation: "spin 1s linear infinite" }} />
-          <p style={{ fontFamily: "'Montserrat', sans-serif", color: "#5e4c3e", fontSize: "1.2rem" }}>
+        <div className="flex flex-col items-center justify-center h-[60vh] gap-4">
+          <img src="/pokeball-spin.png" alt="Cargando" className="w-[60px] h-[60px] animate-spin" />
+          <p className="font-sans text-rawg-brown text-xl">
             Cargando...
           </p>
-          <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
         </div>
       </main>
     );
@@ -54,113 +44,57 @@ export default function GamePage() {
 
   if (error || !game) {
     return (
-      <main style={{ minHeight: "100vh", backgroundColor: "#d7cfac" }}>
+      <main className="min-h-screen bg-rawg-beige">
         <Navbar />
         <ErrorMessage message={error || "Juego no encontrado"} />
       </main>
     );
   }
 
-  return (
-    <main style={{ minHeight: "100vh", backgroundColor: "#d7cfac" }}>
-      <Navbar />
-      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "2rem" }}>
-        <Link
-          href="/"
-          style={{
-            fontFamily: "'Montserrat', sans-serif",
-            color: "#5e4c3e",
-            textDecoration: "none",
-            fontSize: "0.9rem",
-            display: "inline-block",
-            marginBottom: "1.5rem",
-          }}
-        >
-          ← Volver
-        </Link>
-        {game.background_image && (
-          <img
-            src={game.background_image}
-            alt={game.name}
-            style={{
-              width: "100%",
-              height: "350px",
-              objectFit: "cover",
-              borderRadius: "12px",
-              border: "2px solid #5e4c3e",
-              marginBottom: "1.5rem",
-            }}
-          />
-        )}
-        <h1
-          style={{
-            fontFamily: "'Montserrat', sans-serif",
-            fontSize: "2rem",
-            color: "#2c2c2a",
-            marginBottom: "1rem",
-          }}
-        >
-          {game.name}
-        </h1>
-        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
-          <span
-            style={{
-              backgroundColor: "#c98350",
-              color: "#d7cfac",
-              padding: "0.3rem 0.8rem",
-              borderRadius: "999px",
-              fontFamily: "'Montserrat', sans-serif",
-              fontSize: "0.9rem",
-            }}
+    return (
+      <main className="min-h-screen bg-rawg-beige">
+        <Navbar />
+        <div className="max-w-[900px] mx-auto p-8">
+          <Link
+            href="/"
+            className="font-sans text-rawg-brown no-underline text-sm inline-block mb-6"
           >
-            ⭐ {game.rating}
-          </span>
-          {game.metacritic && (
-            <span
-              style={{
-                backgroundColor: "#5e4c3e",
-                color: "#d7cfac",
-                padding: "0.3rem 0.8rem",
-                borderRadius: "999px",
-                fontFamily: "'Montserrat', sans-serif",
-                fontSize: "0.9rem",
-              }}
-            >
-              Metacritic: {game.metacritic}
-            </span>
+            ← Volver
+          </Link>
+          {game.background_image && (
+            <img
+              src={game.background_image}
+              alt={game.name}
+              className="w-full h-[350px] object-cover rounded-xl border-2 border-rawg-brown mb-6"
+            />
           )}
-          <span
-            style={{
-              backgroundColor: "#a39475",
-              color: "#2c2c2a",
-              padding: "0.3rem 0.8rem",
-              borderRadius: "999px",
-              fontFamily: "'Montserrat', sans-serif",
-              fontSize: "0.9rem",
-            }}
-          >
-            📅 {game.released}
-          </span>
-        </div>
-        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-          {game.genres.map((genre) => (
-            <span
-              key={genre.id}
-              style={{
-                backgroundColor: "#d7cfac",
-                border: "2px solid #5e4c3e",
-                color: "#2c2c2a",
-                padding: "0.2rem 0.6rem",
-                borderRadius: "4px",
-                fontFamily: "'Montserrat', sans-serif",
-                fontSize: "0.8rem",
-              }}
-            >
-              {genre.name}
+          <h1 className="font-sans text-3xl text-rawg-dark mb-4">
+            {game.name}
+          </h1>
+          <div className="flex gap-4 flex-wrap mb-6">
+            <span className="bg-rawg-orange text-rawg-beige px-3 py-1 rounded-full font-sans text-sm">
+              ⭐ {game.rating}
             </span>
-          ))}
+            {game.metacritic && (
+              <span className="bg-rawg-brown text-rawg-beige px-3 py-1 rounded-full font-sans text-sm">
+                Metacritic: {game.metacritic}
+              </span>
+            )}
+            <span className="bg-rawg-khaki text-rawg-dark px-3 py-1 rounded-full font-sans text-sm">
+              📅 {game.released}
+            </span>
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            {game.genres.map((genre) => (
+              <span
+                key={genre.id}
+                className="bg-rawg-beige border-2 border-rawg-brown text-rawg-dark px-2 py-1 rounded font-sans text-xs"
+              >
+                {genre.name}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
   );
 }

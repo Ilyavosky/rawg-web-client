@@ -54,26 +54,11 @@ export default function Home() {
   };
 
   return (
-    <main style={{ minHeight: "100vh", backgroundColor: "#d7cfac" }}>
+    <main className="min-h-screen bg-rawg-beige">
       <Navbar />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "1.5rem",
-          padding: "2rem 0 0 0",
-        }}
-      >
-        <img src="/mimikyu-face.png" alt="Mimikyu" style={{ width: "200px", height: "200px", objectFit: "contain" }} />
-        <h1
-          style={{
-            fontFamily: "'Montserrat', sans-serif",
-            fontSize: "1.5rem",
-            color: "#2c2c2a",
-            margin: 0,
-          }}
-        >
+      <div className="flex flex-col items-center gap-6 pt-8">
+        <img src="/mimikyu-face.png" alt="Mimikyu" className="w-[200px] h-[200px] object-contain" />
+        <h1 className="text-2xl text-rawg-dark m-0">
           Buscar Juegos
         </h1>
         <SearchBar onSearch={handleSearch} />

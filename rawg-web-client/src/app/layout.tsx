@@ -24,8 +24,7 @@ export default function RootLayout({
         <script src="https://kit.fontawesome.com/8e9f48c27b.js" crossOrigin="anonymous"></script>
       </head>
       <body
-        className={`${montserrat.variable} antialiased`}
-        style={{ fontFamily: 'var(--font-montserrat), sans-serif', fontWeight: 'bold' }}
+        className={`${montserrat.variable} font-sans font-bold antialiased`}
       >
         {children}
       </body>
