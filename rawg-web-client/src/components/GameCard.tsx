@@ -25,8 +25,8 @@ export default function GameCard({ game }: GameCardProps) {
             {game.name}
           </h3>
           <div className="flex justify-between items-center">
-            <span className="font-sans text-[0.85rem] text-rawg-brown">
-              ⭐ {game.rating}
+            <span className="font-sans text-[0.85rem] text-rawg-brown flex items-center gap-1">
+              <i className="fa-solid fa-star"></i> {game.rating}
             </span>
             {game.metacritic && (
               <span className="bg-rawg-orange text-rawg-beige rounded px-[0.4rem] py-[0.1rem] text-xs font-sans font-bold">

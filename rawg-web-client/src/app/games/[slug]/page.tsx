@@ -72,16 +72,16 @@ export default function GamePage() {
             {game.name}
           </h1>
           <div className="flex gap-4 flex-wrap mb-6">
-            <span className="bg-rawg-orange text-rawg-beige px-3 py-1 rounded-full font-sans text-sm">
-              ⭐ {game.rating}
+            <span className="bg-rawg-orange text-rawg-beige px-3 py-1 rounded-full font-sans text-sm flex items-center gap-1">
+              <i className="fa-solid fa-star"></i> {game.rating}
             </span>
             {game.metacritic && (
               <span className="bg-rawg-brown text-rawg-beige px-3 py-1 rounded-full font-sans text-sm">
                 Metacritic: {game.metacritic}
               </span>
             )}
-            <span className="bg-rawg-khaki text-rawg-dark px-3 py-1 rounded-full font-sans text-sm">
-              📅 {game.released}
+            <span className="bg-rawg-khaki text-rawg-dark px-3 py-1 rounded-full font-sans text-sm flex items-center gap-1">
+              <i className="fa-solid fa-calendar"></i> {game.released}
             </span>
           </div>
           <div className="flex gap-2 flex-wrap">

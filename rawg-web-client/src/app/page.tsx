@@ -57,7 +57,7 @@ export default function Home() {
     <main className="min-h-screen bg-rawg-beige">
       <Navbar />
       <div className="flex flex-col items-center gap-6 pt-8">
-        <img src="/mimikyu-face.png" alt="Mimikyu" className="w-[200px] h-[200px] object-contain" />
+        <img src="/mimikyu-face.png" alt="Mimikyu" className="w-[300px] h-[300px] object-contain" />
         <h1 className="text-2xl text-rawg-dark m-0">
           Buscar Juegos
         </h1>
