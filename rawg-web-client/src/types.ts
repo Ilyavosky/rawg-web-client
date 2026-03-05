@@ -33,6 +33,7 @@ export interface Game {
   rating: number;
   ratings_count: number;
   metacritic: number;
+  description_raw: string;
   genres: Genre[];
   platforms: { platform: Platform }[];
 }
